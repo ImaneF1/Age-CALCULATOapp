@@ -1,8 +1,10 @@
-"use client";
-import { useState } from "react";
 
-export default function CompleteButton({initValue} : {initValue: boolean | null}) {
-    const [isCompleted, setIsCompleted] = useState<boolean | null>(initValue && false);
+interface CompleteButtonProps {
+    isCompleted: boolean;
+    setIsCompleted: (params: boolean) => void;
+}
+
+export default function CompleteButton({ isCompleted, setIsCompleted } : CompleteButtonProps ) {
     return (
         <>
             <div className={`rounded-full flex items-center justify-center ${isCompleted ? "bg-gradient-to-br from-cyan-300 to-purple-500" : "border border-gray-400"} w-[20px] h-[20px]`} onClick={() => setIsCompleted(!isCompleted)}>
