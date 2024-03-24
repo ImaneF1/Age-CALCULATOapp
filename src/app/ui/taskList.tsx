@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
 import Task from "./task";
-import TaskCounter from "./taskCounter";
 
 interface Task {
     id: number;
@@ -31,6 +30,11 @@ export default function TaskList({ taskList, setTaskList }: TaskListProps) {
         }
     }
 
+    const clearCompleted = () => {
+        const newList = [...taskList].filter(task => !task.isCompleted)
+        setTaskList(newList);
+    }
+
     const [status, setSatus] = useState<Status>("ALL");
     return (
         <>
@@ -53,7 +57,7 @@ export default function TaskList({ taskList, setTaskList }: TaskListProps) {
                 })}
                 <div className="bg-white p-4 flex items-center justify-between gap-3 rounded-[5px]">
                     <p className="text-grayish">{[...taskList].filter((task) => !task.isCompleted).length} items left</p>
-                    <p className="text-grayish">Clear Completed</p>
+                    <p onClick={() => clearCompleted()} className="text-grayish cursor-pointer">Clear Completed</p>
                 </div>
             </ul>
 
@@ -63,7 +67,7 @@ export default function TaskList({ taskList, setTaskList }: TaskListProps) {
                     <p className={`cursor-pointer ${status === "ACTIVE" && "text-active"}`} onClick={() => setSatus("ACTIVE")}>Active</p>
                     <p className={`cursor-pointer ${status === "COMPLETED" && "text-active"}`} onClick={() => setSatus("COMPLETED")}>Completed</p>
                 </div>
-             </div>
+            </div>
         </>
     )
 }
