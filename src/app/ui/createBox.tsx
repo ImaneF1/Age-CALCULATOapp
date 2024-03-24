@@ -21,7 +21,7 @@ export default function CreateBox({taskList, setTaskList}: CreateBoxProps) {
         }
         if (target.text.value !== "") {
             const task : Task = {
-                id : taskList.length + 1,
+                id : new Date().getUTCMilliseconds(),
                 text: target.text.value,
                 isCompleted: isCompleted
             }
