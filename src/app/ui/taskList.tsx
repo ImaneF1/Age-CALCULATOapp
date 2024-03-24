@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import Task from "./task";
+import TaskCounter from "./taskCounter";
 
 interface Task {
     id: number;
@@ -51,7 +52,7 @@ export default function TaskList({ taskList, setTaskList }: TaskListProps) {
                     )
                 })}
                 <div className="bg-white p-4 flex items-center justify-between gap-3 rounded-[5px]">
-                    <p className="text-grayish">{taskList.length} items left</p>
+                    <p className="text-grayish">{[...taskList].filter((task) => !task.isCompleted).length} items left</p>
                     <p className="text-grayish">Clear Completed</p>
                 </div>
             </ul>
