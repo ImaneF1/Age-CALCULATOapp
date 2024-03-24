@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import Task from "./task";
-import { text } from "stream/consumers";
 
 interface Task {
     id: number;
@@ -17,7 +16,9 @@ type Status = "ALL" | "ACTIVE" | "COMPLETED";
 export default function TaskList({ taskList, setTaskList }: TaskListProps) {
     const deleteTask = (index: number) => {
         if (index < taskList.length) {
-            setTaskList([...taskList.slice(index, 1)]);
+            const newList = taskList;
+            newList.splice(index,1);
+            setTaskList([...newList]);
         }
     }
     const [status, setSatus] = useState<Status>("ALL");
