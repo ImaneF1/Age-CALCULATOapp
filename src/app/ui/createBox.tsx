@@ -1,6 +1,7 @@
 "use client";
 import CompleteButton from "./completeButton"
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { ThemeContext } from "../page";
 
 interface Task {
     id: number;
@@ -13,6 +14,7 @@ interface CreateBoxProps {
 }
 
 export default function CreateBox({taskList, setTaskList}: CreateBoxProps) {
+    const theme = useContext(ThemeContext);
     const [isCompleted, setIsCompleted] = useState<boolean>(false);
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
@@ -35,9 +37,9 @@ export default function CreateBox({taskList, setTaskList}: CreateBoxProps) {
     }
     return (
         <>
-            <form onSubmit={handleSubmit} className="bg-white rounded-[5px] p-4 flex items-center gap-3">
+            <form onSubmit={handleSubmit} className={`${theme ? "bg-white" : "bg-darkBlue"} rounded-[5px] p-4 flex items-center gap-3`}>
                 <CompleteButton isCompleted={isCompleted} modifyTask={modifyTask}/>
-                <input placeholder="Create a new todo..." type="text" name="text" className="text-regular text-grayish font-normal flex-1 outline-none" />
+                <input placeholder="Create a new todo..." type="text" name="text" className={`${!theme && "bg-darkBlue text-darkGray"} text-regular text-grayish font-normal flex-1 outline-none`} />
             </form>
         </>
     )
