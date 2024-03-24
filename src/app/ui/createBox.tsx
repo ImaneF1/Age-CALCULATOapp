@@ -19,14 +19,16 @@ export default function CreateBox({taskList, setTaskList}: CreateBoxProps) {
         const target = e.target as typeof e.target & {
             text: {value: string};
         }
-        const task : Task = {
-            id : taskList.length + 1,
-            text: target.text.value,
-            isCompleted: isCompleted
+        if (target.text.value !== "") {
+            const task : Task = {
+                id : taskList.length + 1,
+                text: target.text.value,
+                isCompleted: isCompleted
+            }
+            setTaskList([task, ...taskList])
+            setIsCompleted(false);
+            target.text.value = "";
         }
-        setTaskList([...taskList, task])
-        setIsCompleted(false);
-        target.text.value = "";
     }
     return (
         <>
