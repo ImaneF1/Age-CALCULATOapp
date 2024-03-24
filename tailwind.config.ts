@@ -16,7 +16,8 @@ const config: Config = {
       textColor: {
         "grayish": "#9495A5",
         lightGray: "#D1D2DA",
-        dark: "#494C6B"
+        dark: "#494C6B",
+        active: "#3A7CFD"
       },
       fontSize: {
         "title": "2rem",
