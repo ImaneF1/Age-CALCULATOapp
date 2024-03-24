@@ -30,10 +30,13 @@ export default function CreateBox({taskList, setTaskList}: CreateBoxProps) {
             target.text.value = "";
         }
     }
+    const modifyTask = () => {
+        setIsCompleted(!isCompleted);
+    }
     return (
         <>
             <form onSubmit={handleSubmit} className="bg-white rounded-[5px] p-4 flex items-center gap-3">
-                <CompleteButton isCompleted={isCompleted} setIsCompleted={setIsCompleted}/>
+                <CompleteButton isCompleted={isCompleted} modifyTask={modifyTask}/>
                 <input placeholder="Create a new todo..." type="text" name="text" className="text-regular text-grayish font-normal flex-1 outline-none" />
             </form>
         </>

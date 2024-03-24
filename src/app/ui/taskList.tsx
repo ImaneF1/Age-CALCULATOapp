@@ -15,12 +15,21 @@ type Status = "ALL" | "ACTIVE" | "COMPLETED";
 
 export default function TaskList({ taskList, setTaskList }: TaskListProps) {
     const deleteTask = (index: number) => {
-        if (index < taskList.length) {
+        if (index >= 0 && index < taskList.length) {
             const newList = taskList;
             newList.splice(index,1);
             setTaskList([...newList]);
         }
     }
+
+    const modifyTask = (index: number) => {
+        if (index >= 0 && index < taskList.length) {
+            const newList = taskList;
+            newList[index].isCompleted = !taskList[index].isCompleted;
+            setTaskList([...newList]);
+        }
+    }
+
     const [status, setSatus] = useState<Status>("ALL");
     return (
         <>
@@ -37,7 +46,7 @@ export default function TaskList({ taskList, setTaskList }: TaskListProps) {
                 }).map((task: Task, index: number) => {
                     return (
                         <li key={task.id} className="rounded-[5px]">
-                            <Task taskData={task} deleteTask={() => deleteTask(index)}/>
+                            <Task taskData={task} deleteTask={() => deleteTask(index)} modifyTask={() => modifyTask(index)}/>
                         </li>
                     )
                 })}
