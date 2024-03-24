@@ -15,12 +15,17 @@ const config: Config = {
       },
       textColor: {
         "grayish": "#9495A5",
+        lightGray: "#D1D2DA",
+        dark: "#494C6B"
       },
       fontSize: {
-        "title": "40px",
-        regular: "18px",
-        small: "14px"
-      }
+        "title": "2rem",
+        regular: "1rem",
+        small: "1.17rem"
+      },
+      borderColor: {
+        grayish: "#D1D2DA",
+      },
     },
   },
   plugins: [],

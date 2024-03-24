@@ -3,11 +3,16 @@ import CompleteButton from "./completeButton"
 import React, { useState } from "react"
 
 interface Task {
+    id: number;
     text: string;
     isCompleted: boolean;
 }
+interface CreateBoxProps {
+    taskList: Array<Task>;
+    setTaskList: (params: Array<Task>) => void;
+}
 
-export default function CreateBox() {
+export default function CreateBox({taskList, setTaskList}: CreateBoxProps) {
     const [isCompleted, setIsCompleted] = useState<boolean>(false);
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
@@ -15,10 +20,11 @@ export default function CreateBox() {
             text: {value: string};
         }
         const task : Task = {
+            id : taskList.length + 1,
             text: target.text.value,
             isCompleted: isCompleted
         }
-        alert(JSON.stringify(task));
+        setTaskList([...taskList, task])
         setIsCompleted(false);
         target.text.value = "";
     }
@@ -26,7 +32,7 @@ export default function CreateBox() {
         <>
             <form onSubmit={handleSubmit} className="bg-white rounded-[5px] p-4 flex items-center gap-3">
                 <CompleteButton isCompleted={isCompleted} setIsCompleted={setIsCompleted}/>
-                <input placeholder="Create a new todo..." type="text" name="text" className="text-[12px] text-grayish font-normal flex-1 outline-none" />
+                <input placeholder="Create a new todo..." type="text" name="text" className="text-regular text-grayish font-normal flex-1 outline-none" />
             </form>
         </>
     )
