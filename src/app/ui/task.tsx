@@ -28,7 +28,7 @@ export default function Task({taskData, deleteTask, modifyTask} : TaskProps) {
     const theme = useContext(ThemeContext);
     return (
         <>
-            <div className={`${theme ? "bg-white" : "bg-darkBlue"} p-4 flex items-center gap-3`}>
+            <div className={`${theme ? "bg-white" : "bg-darkBlue"} p-4 lg:p-5 flex items-center gap-3`}>
                 <CompleteButton isCompleted={isCompleted} modifyTask={handleModification}/>
                 <p className={`text-regular ${theme ? "text-dark" : isCompleted ? "text-darkFade" : "text-darkLight"} font-normal flex-1 ${isCompleted && (theme ? "line-through text-lightGray" : "line-through text-darkFade")}`} >{taskData.text}</p>
                 <svg onClick={handleDelete} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`w-6 h-6 ${theme ? "text-grayish" : "text-dark"}`}>

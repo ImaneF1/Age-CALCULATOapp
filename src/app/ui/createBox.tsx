@@ -37,7 +37,7 @@ export default function CreateBox({taskList, setTaskList}: CreateBoxProps) {
     }
     return (
         <>
-            <form onSubmit={handleSubmit} className={`${theme ? "bg-white" : "bg-darkBlue"} rounded-[5px] p-4 flex items-center gap-3`}>
+            <form onSubmit={handleSubmit} className={`${theme ? "bg-white" : "bg-darkBlue"} rounded-[5px] p-4 lg:p-5 flex items-center gap-3`}>
                 <CompleteButton isCompleted={isCompleted} modifyTask={modifyTask}/>
                 <input placeholder="Create a new todo..." type="text" name="text" className={`${!theme && "bg-darkBlue text-darkGray"} text-regular text-grayish font-normal flex-1 outline-none`} />
             </form>
