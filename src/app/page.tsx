@@ -4,15 +4,14 @@ import lightBg from '../../public/bg-desktop-light.jpg';
 import darkBg from '../../public/bg-desktop-dark.jpg';
 import CreateBox from "./ui/createBox";
 import TaskList from "./ui/taskList";
-import { createContext, useState } from "react";
-
+import { useState } from "react";
+import { ThemeContext } from "./themeContext";
 interface Task {
   id: number;
   text: string;
   isCompleted: boolean
 }
 
-export const ThemeContext = createContext<boolean>(true);
 
 export default function Home() {
   const tasks: Array<Task> = [

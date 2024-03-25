@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef, useContext } from "react"
+import React, { useState, useContext } from "react"
 import Task from "./task";
-import { ThemeContext } from "../page";
+import { ThemeContext } from "../themeContext";
 
 interface Task {
     id: number;

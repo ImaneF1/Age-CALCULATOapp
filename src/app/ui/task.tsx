@@ -1,5 +1,5 @@
 "use client";
-import { ThemeContext } from "../page";
+import { ThemeContext } from "../themeContext";
 import CompleteButton from "./completeButton"
 import React, { useContext, useEffect, useState } from "react"
 

@@ -1,7 +1,7 @@
 "use client";
 import CompleteButton from "./completeButton"
 import React, { useState, useContext } from "react"
-import { ThemeContext } from "../page";
+import { ThemeContext } from "../themeContext";
 
 interface Task {
     id: number;
