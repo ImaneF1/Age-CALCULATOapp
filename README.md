@@ -24,8 +24,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/qrcode-on-react-with-copy-to-clipboard-9WbQM4pg-x](https://www.frontendmentor.io/solutions/qrcode-on-react-with-copy-to-clipboard-9WbQM4pg-x)
+- Live Site URL: [https://serverlesstodopoc.netlify.app/](https://serverlesstodopoc.netlify.app/)
 
 ### Built with
 
