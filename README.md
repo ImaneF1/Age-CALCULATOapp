@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/qrcode-on-react-with-copy-to-clipboard-9WbQM4pg-x](https://www.frontendmentor.io/solutions/qrcode-on-react-with-copy-to-clipboard-9WbQM4pg-x)
+- Solution URL: [https://www.frontendmentor.io/solutions/todo-list-with-react-B6lJmulCHf](https://www.frontendmentor.io/solutions/todo-list-with-react-B6lJmulCHf)
 - Live Site URL: [https://serverlesstodopoc.netlify.app/](https://serverlesstodopoc.netlify.app/)
 
 ### Built with
