@@ -1,5 +1,5 @@
 "use client";
-import CompleteButton from "./completeButton"
+//import CompleteButton from "./CompleteButton"
 import React, { useState, useContext } from "react"
 import { ThemeContext } from "../themeContext";
 import { Task } from "./taskList";
@@ -9,7 +9,7 @@ interface CreateBoxProps {
     setTaskList: (params: Array<Task>) => void;
 }
 
-export default function createBox({  setTaskList }: CreateBoxProps) { 
+export default function CreateBox({  setTaskList }: CreateBoxProps) { 
     const theme = useContext(ThemeContext);
     const [isCompleted, setIsCompleted] = useState<boolean>(false);
     const [text, setText] = useState<string>();

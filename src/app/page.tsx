@@ -2,7 +2,7 @@
 import Image from "next/image";
 import lightBg from '../../public/bg-desktop-light.jpg';
 import darkBg from '../../public/bg-desktop-dark.jpg';
-import CreateBox from "./ui/createBox";
+import CreateBox from "./ui/CreateBox";
 import TaskList from "./ui/taskList";
 import { useState } from "react";
 import { ThemeContext } from "./themeContext";

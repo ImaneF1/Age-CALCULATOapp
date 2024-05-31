@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect, use } from "react"
 import Task from "./task";
 import { ThemeContext } from "../themeContext";
 import { useRouter } from "next/navigation";
-import CreateBox from "./createBox";
+import CreateBox from "./CreateBox";
 export interface Task {
     id: number;
     text: string;

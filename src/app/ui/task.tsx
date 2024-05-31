@@ -1,9 +1,9 @@
 "use client";
 
 import { ThemeContext } from "../themeContext";
-import CompleteButton from "./completeButton"
 import React, { useContext, useEffect, useState } from "react"
 import router from "next/router";
+import CompleteButton from "./CompleteButton";
 
 interface Task {
     id: number;
